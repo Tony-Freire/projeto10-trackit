@@ -4,8 +4,7 @@ import UserContext from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import Style from "./style";
 import Logo from "../../assets/img/logo.svg";
-
-import { ThreeDots } from 'react-loader-spinner';
+import  {ThreeDots}  from 'react-loader-spinner';
 
 export default function Login() {
   const { PersistLogin } = useContext(UserContext);
@@ -70,7 +69,7 @@ export default function Login() {
 
           <Button type="submit" stageLoading={isLoading}>
             {isLoading ?
-              <ThreeDots type="ThreeDots" color="#FFFFFF" height={50} width={50} />
+              <ThreeDots color="#FFFFFF" height={50} width={50} />
             :
               "Entrar"
             }
