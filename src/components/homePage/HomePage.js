@@ -18,8 +18,8 @@ export default function HomePage()
     const [disabled, setDisabled] = useState(false);
     const URL = "https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login"
 
-    function handleLogin(e) {
-        e.preventDefault();
+    function Login(e) {
+        e.preventDefault()
         const user = { email: email, password: password }
         setDisabled(true);
         const promisse = axios.post(URL,user);
@@ -29,14 +29,14 @@ export default function HomePage()
             navigate("/hoje")})
         promisse.catch(error => {
             setDisabled(false);
-            alert("Login ou senha errados! Tente novamente.")
+            alert("Login ou senha incorretos! Tente novamente.")
         })
     }
     return(
         <>
         <Container>
         <img alt="logo.svg" src={Logo}/>
-        <Form onSubmit={handleLogin}> 
+        <Form onSubmit={Login}> 
         <Input 
             type="email"
             placeholder="email"
@@ -125,7 +125,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   img{
     margin-top: 68px;
   }
