@@ -65,7 +65,7 @@ export default function HabitsPage() {
         return (
             <Form onSubmit={submitForm}>
                 <FormInput placeholder="nome do hábito" type='text' value={habitDescription} onChange={e => sethabitDescription(e.target.value)} />
-                <WeekDaysRow>
+                <WeekdaysList>
                     <DayofWeek day='D' id='0' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
                     <DayofWeek day='S' id='1' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
                     <DayofWeek day='T' id='2' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
@@ -73,7 +73,7 @@ export default function HabitsPage() {
                     <DayofWeek day='Q' id='4' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
                     <DayofWeek day='S' id='5' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
                     <DayofWeek day='S' id='6' weekDaysList={weekDaysList} setWeekDaysList={setWeekDaysList} />
-                </WeekDaysRow>
+                </WeekdaysList>
 
                 <ButtonsRow>
                     <Cancel onClick={enableAddHabit} >Cancelar</Cancel>
@@ -85,7 +85,7 @@ export default function HabitsPage() {
     }
 
     return (
-        <Screen>
+        <Container>
             <Top>
                 <Title>Meus hábitos</Title>
                 <Button onClick={enableAddHabit}>+</Button>
@@ -98,11 +98,11 @@ export default function HabitsPage() {
                     {habitsList.map((habit) => {return(<Habit name={habit.name} id={habit.id} days={habit.days} config={config} getHabitsList={getHabits} />)})}
                 </>
                 : <p>Você não tem nenhum hábito cadastrado ainda. Adicione um novo hábito para começar a trackear!</p>}
-        </Screen>
+        </Container>
     )
 }
 
-const WeekDaysRow = styled.div`
+const WeekdaysList = styled.div`
     display: flex;
     justify-content: flex-start;
     width: 90%;
@@ -192,7 +192,12 @@ const Top = styled.div`
     justify-content: space-between;
 `
 
-const Screen = styled.div`
+const Container = styled.div`
+    font-family: 'Lexend Deca';
+font-style: normal;
+font-weight: 400;
+font-size: 22.976px;
+line-height: 29px;
     background-color: rgb(229, 229, 229);
     width: 100%;
     height: 100%;

@@ -7,6 +7,8 @@ import RegisterPage from "./registerPage/RegisterPage"
 import TodayPage from "./todayPage/TodayPage"
 import Footer from "./footer/Footer.js"
 import Header from "./header/Header";
+import HistoricPage from "./historic/HistoricPage";
+
 
 
 
@@ -23,6 +25,7 @@ export default function App()
         <Route path="/cadastro" element={<RegisterPage/>}/>
         <Route path="/hoje" element={<TodayPage/>}/>
         <Route path="/habito" element={<HabitsPage/>}/>
+        <Route path="/historico" element={<HistoricPage/>}/>
       </Routes>
       {onlineUser ? <Footer /> : <></>}
 
